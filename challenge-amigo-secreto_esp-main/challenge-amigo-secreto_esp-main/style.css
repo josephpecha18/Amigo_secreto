@@ -172,7 +172,7 @@ button {
     background-color: var(--color-button-hover);
 }
 
-#eliminar-button{
+.eliminar-button{
     background-color: var(--color-tertiary);
     color: var(--color-text);
     border-radius: 360 25px 25px 0;
@@ -182,9 +182,19 @@ button {
     align-items: center;    
 }
 
-#eliminar-button:hover {
+.eliminar-button:hover {
     background-color: var(--color-button-hover);
 }   
+
+.button-disabled-ul{
+    background-color: grey;
+    color: #fcfcfc;
+    border-radius: 360 25px 25px 0;
+    margin-left: 25px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;   
+}
 
 /* Listas */
 ul {
@@ -213,6 +223,18 @@ ul {
     background-color: var(--color-tertiary);
     font-size: 16px;
     gap: 10px;
+    margin-bottom: 16px; 
+}
+
+.button-disabled {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: #fdfdfd;
+    background-color: gray;
+    font-size: 16px;
+    gap: 50px;
     margin-bottom: 16px; 
 }
 

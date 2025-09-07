@@ -3,6 +3,10 @@
 let amigos = []
 let nombreAmigoSecreto = ''
 let amigoSorteado = null;
+document.getElementById('button-refre').disabled = true;
+document.getElementById('button-refre').className = "button-disabled";
+document.getElementById('button-sort').disabled = true;
+document.getElementById('button-sort').className = "button-disabled";
 
 function agregarAmigo() {
     let nombreAmigoSecreto = document.getElementById('amigo').value;
@@ -14,22 +18,26 @@ function agregarAmigo() {
         alert('El nombre ya fue ingresado, por favor ingrese otro nombre.');
         return;
     }
-    if (!/^\s*\S+\s+\S+/.test(nombreAmigoSecreto)) {
-        alert('Por favor, ingrese nombre y apellido.');
+    if (!/^[A-Z][a-z]+ [A-Z][a-z]+$/.test(nombreAmigoSecreto)) {
+        alert('Por favor, ingrese nombre y apellido, ambas palabras con la inicial en mayúscula.');
         return;
-    } else {
-        amigos.push(nombreAmigoSecreto);
-        let ul = document.getElementById('listaAmigos');
-        ul.innerHTML = '';
-        amigos.forEach(function(amigo) {
+    }
+    amigos.push(nombreAmigoSecreto);
+    let ul = document.getElementById('listaAmigos');
+    ul.innerHTML = '';
+    amigos.forEach(function(amigo) {
         let li = document.createElement('li');
         li.textContent = amigo;
         let botonEliminar = document.createElement('button');
         botonEliminar.textContent = 'x';
+        botonEliminar.className = 'eliminar-button';
         botonEliminar.id = 'eliminar-button';
         ul.appendChild(li);
         li.appendChild(botonEliminar);
-        });
+    });
+    if (amigos.length >= 2) {
+        document.getElementById('button-sort').disabled = false;
+        document.getElementById('button-sort').className = "button-draw";
     }
     console.log(amigos);
     limpiarCampo();
@@ -56,6 +64,9 @@ function reiniciarAmigos() {
     document.getElementById('listaAmigos').innerHTML = '';
     document.getElementById('resultado').innerHTML = '';
     limpiarCampo();
+    document.getElementById('button-sort')
+    document.getElementById('button-sort').disabled = true;
+    document.getElementById('button-sort').className = "button-draw";
 }
 
 function sortearAmigo () {
@@ -74,8 +85,21 @@ function sortearAmigo () {
     let li = document.createElement('li');
     li.textContent = amigoSorteado;
     ul.appendChild(li);
-    document.getElementById('button-draw').disabled = true;
-    
+    disabledButtons();
 }
-// al eliminar los amigos tambien se debe eliminar el nombre del amigo sorteado
-// el boton de sortear debe deshabilitarse despues de sortear y habilitarse al reiniciar
+
+function disabledButtons() {
+    if (document.getElementById('button-sort')){
+        document.getElementById('button-sort').disabled = true;
+        document.getElementById('button-sort').className = "button-disabled";
+    }
+    if (document.getElementById('button-refre')){
+        document.getElementById('button-refre').disabled = false;
+        document.getElementById('button-refre').className = "button-refresh";
+    }
+    let eliminarButtons = document.querySelectorAll('.eliminar-button');
+    eliminarButtons.forEach(button => {
+        button.disabled = true;
+        button.className = "button-disabled-ul";
+    });
+}
