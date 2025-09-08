@@ -1,3 +1,6 @@
+/* =========================
+   Variables y Reset global
+========================= */
 :root {
     --color-primary: #113F67;
     --color-secondary: #58A0C8;
@@ -8,13 +11,15 @@
     --color-white: #fdfdfd;
 }
 
-/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* =========
+   <body>
+========= */
 body {
     height: 110vh;
     background-color: var(--color-primary);
@@ -23,6 +28,9 @@ body {
     align-items: center;
 }
 
+/* =========================
+   <main class="main-content">
+========================= */
 .main-content {
     display: flex;
     flex-direction: column;
@@ -30,6 +38,9 @@ body {
     width: 100%;
 }
 
+/* ===========================================
+   <header class="header-banner"> … </header>
+=========================================== */
 .header-banner {
     position: relative;
     display: flex;
@@ -43,13 +54,224 @@ body {
     height: auto;
 }
 
+.header-banner .main-title {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    pointer-events: none;
+    text-align: center;
+    width: 100%;
+}
 
+/* h1.título principal dentro del header */
+.main-title {
+    font-size: 3.125rem;
+    font-family: "Merriweather", serif;
+    font-weight: 1000;
+    font-style: italic;
+    color: var(--color-white);
+    animation-duration: 2s;
+    animation-name: slidein;
+}
+
+/* imagen con hover dentro del header */
+#image_gift:hover {
+    animation-name: leaves;
+    animation-duration: 0.6s;
+}
+
+/* =========================================
+   <section class="input-section"> … </section>
+========================================= */
+.input-section {
+    flex: 60%;
+    background-color: var(--color-secondary);
+    border: 1px solid #000;
+    border-radius: 64px 64px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* h2 título de la sección */
+.section-title {
+    font-family: "Inter", serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* contenedor input + botón Añadir */
+.input-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* input de nombre */
+.input-name {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 25px 0 0 25px;
+    font-size: 1rem;
+}
+
+/* botón Añadir (junto al input) */
+.button-add {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* listas dentro de la sección */
+ul {
+    list-style-type: none;
+    color: var(--color-text);
+    font-family: "Inter", sans-serif;
+    font-size: 1.125rem;
+    margin: 20px 0;
+}
+
+.result-list {
+    margin-top: 15px;
+    color: #fcfcfc;
+    font-size: 1.375rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* botón eliminar dentro de la lista */
+.eliminar-button{
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 360 25px 25px 0;
+    margin-left: 25px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;    
+}
+
+.eliminar-button:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* estado deshabilitado para botón de lista */
+.button-disabled-ul{
+    background-color: grey;
+    color: #fcfcfc;
+    border-radius: 360 25px 25px 0;
+    margin-left: 25px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;   
+}
+
+/* contenedor de botones Sortear/Reiniciar */
+.button-container {
+    width: 300px;
+    justify-content: center;
+}
+
+/* ==========================
+   Estilos de entradas extra
+========================== */
+.input-title {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #000000;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+    font-family: "Merriweather", serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================
+   Botones (global)
+================== */
+button {
+    padding: 15px 30px;
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    border: 2px solid #777777;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* botón Sortear dentro de .button-container */
+.button-draw {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-tertiary);
+    font-size: 1rem;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.button-draw img {
+    margin-right: 40px;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* estado deshabilitado para botón sortear */
+.button-disabled {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: #fdfdfd;
+    background-color: gray;
+    font-size: 1rem;
+    gap: 50px;
+    margin-bottom: 16px; 
+}
+
+/* botón Reiniciar dentro de .button-container */
+.button-refresh {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
+    color: var(--color-white);
+    background-color: var(--color-tertiary);
+    font-size: 1rem;
+    gap: 50px;
+}
+
+.button-refresh:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* ==============
+   Animaciones
+============== */
 @keyframes slidein {
   from {
     margin-left: 100%;
     width: 300%;
   }
-
   to {
     margin-left: 0%;
     width: 100%;
@@ -65,199 +287,56 @@ body {
   }
 }
 
-#image_gift:hover {
-    animation-name: leaves;
-    animation-duration: 0.6s;
+/* ===============
+   Media Queries
+=============== */
+@media (max-width: 770px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+
+    .header-banner img {
+        display: block;
+        max-width: 70%;
+        height: auto;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+        width: 80%;
+    }
+
+    .input-name {
+        display: block;
+        width: 100%;
+        border-radius: 25px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        max-width: none;
+        font-size: 1.5rem;
+    }
+
+    .button-add {
+        width: 100%;
+        border-radius: 25px;
+        margin: 5px 0;
+        box-sizing: border-box;
+    }
+
+    .button-container {
+        width: 60%;
+    }
 }
 
-
-.header-banner .main-title {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: var(--color-white);
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-    pointer-events: none;
-    text-align: center;
-    width: 100%;
-}
-
-/* Sección de entrada */
-.input-section {
-    flex: 60%;
-    background-color: var(--color-secondary);
-    border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    width: 100%;
-}
-
-/* Títulos */
-.main-title {
-    font-size: 50px;
-    font-family: "Merriweather", serif;
-    font-weight: 1000;
-    font-style: italic;
-    color: var(--color-white);
-    animation-duration: 2s;
-    animation-name: slidein;
-}
-
-.section-title {
-    font-family: "Inter", serif;
-    font-size: 40px;
-    font-weight: 700;
-    color: var(--color-primary);
-    margin: 10px 0;
-    text-align: center;
-}
-
-/* Contenedores de entrada y botón */
-.input-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-top: 20px;
-}
-
-.input-name {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #000;
-    border-radius: 25px 0 0 25px;
-    font-size: 16px;
-}
-
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
-/* Estilos de entrada de texto */
-.input-title {
-    flex: 1;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 2px solid #000000;
-    border-right: none;
-    border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilos de botón */
-button {
-    padding: 15px 30px;
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    border: 2px solid #777777;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-}
-
-.button-add:hover {
-    background-color: var(--color-button-hover);
-}
-
-.eliminar-button{
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 360 25px 25px 0;
-    margin-left: 25px;
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;    
-}
-
-.eliminar-button:hover {
-    background-color: var(--color-button-hover);
-}   
-
-.button-disabled-ul{
-    background-color: grey;
-    color: #fcfcfc;
-    border-radius: 360 25px 25px 0;
-    margin-left: 25px;
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;   
-}
-
-/* Listas */
-ul {
-    list-style-type: none;
-    color: var(--color-text);
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    margin: 20px 0;
-}
-
-.result-list {
-    margin-top: 15px;
-    color: #fcfcfc;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Botón de sortear título */
-.button-draw {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-tertiary);
-    font-size: 16px;
-    gap: 10px;
-    margin-bottom: 16px; 
-}
-
-.button-disabled {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: #fdfdfd;
-    background-color: gray;
-    font-size: 16px;
-    gap: 50px;
-    margin-bottom: 16px; 
-}
-
-/* Botón de reiniciar */
-.button-refresh {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-tertiary);
-    font-size: 16px;
-    gap: 50px;
-}
-
-.button-draw img {
-    margin-right: 40px;
-}
-
-.button-draw:hover {
-    background-color: var(--color-button-hover);
-}
-
-.button-refresh:hover {
-    background-color: var(--color-button-hover);
+@media (max-width: 440px) {
+    .header-banner img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
 }
