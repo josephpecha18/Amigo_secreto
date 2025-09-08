@@ -1,0 +1,24 @@
+{
+  "name": "amigo_secreto",
+  "version": "1.0.0",
+  "description": "Web app para organizar el sorteo de Amigo Secreto.",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand",
+    "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watchAll",
+    "test:coverage": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage"
+  },
+  "keywords": [
+    "amigo-secreto",
+    "jest",
+    "jsdom",
+    "testing"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}

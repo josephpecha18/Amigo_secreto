@@ -97,9 +97,8 @@ function disabledButtons() {
         document.getElementById('button-refre').disabled = false;
         document.getElementById('button-refre').className = "button-refresh";
     }
-    let eliminarButtons = document.querySelectorAll('.eliminar-button');
-    eliminarButtons.forEach(button => {
+    document.querySelectorAll('.eliminar-button').forEach(button => {;
         button.disabled = true;
-        button.className = "button-disabled-ul";
+        button.classList.add("button-disabled-ul");
     });
 }
