@@ -9,7 +9,7 @@ Built with **HTML, CSS, and JavaScript**, this project brings a playful yet poli
 
 ---
 ## 🎬 Preview
-![Demo](assets/preview.gif)
+![Demo](challenge-amigo-secreto_esp-main/challenge-amigo-secreto_esp-main/assets/AnimationWebSite.gif)
 
 ---
 
