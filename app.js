@@ -97,8 +97,12 @@ function disabledButtons() {
         document.getElementById('button-refre').disabled = false;
         document.getElementById('button-refre').className = "button-refresh";
     }
-    document.querySelectorAll('.eliminar-button').forEach(button => {;
+    if (document.getElementById('button-add-id')) {
+        document.getElementById('button-add-id').disabled = true;
+        document.getElementById('button-add-id').className = "button-add-disabled";
+    }
+    document.querySelectorAll('.eliminar-button').forEach(button => {
         button.disabled = true;
-        button.classList.add("button-disabled-ul");
+        button.className= "button-disabled-ul";
     });
 }

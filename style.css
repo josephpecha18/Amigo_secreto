@@ -138,6 +138,14 @@ body {
     background-color: var(--color-button-hover);
 }
 
+.button-add-disabled {
+    background-color: var(--color-tertiary);
+    color: var(--color-text);
+    border-radius: 0 25px 25px 0;
+    color: #fcfcfc;
+    background-color: grey;
+}
+
 /* listas dentro de la sección */
 ul {
     list-style-type: none;

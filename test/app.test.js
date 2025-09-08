@@ -88,6 +88,7 @@ describe("Amigo Secreto app", () => {
     expect(list.children.length).toBe(1);
     const delBtn = list.children[0].querySelector("button");
     expect(delBtn).toBeTruthy();
+    // Durante la creación, los botones tienen la clase 'eliminar-button'
     expect(delBtn.classList.contains("eliminar-button")).toBe(true);
   });
 
@@ -157,6 +158,7 @@ describe("Amigo Secreto app", () => {
     );
   });
 
+  // === TEST AJUSTADO PARA LA NUEVA LÓGICA ===
   test("sortearAmigo con 2+ nombres genera resultado y bloquea botones", () => {
     loadDOM();
     addName("Alice Smith");
@@ -165,12 +167,11 @@ describe("Amigo Secreto app", () => {
 
     expect(getEl("resultado").children.length).toBe(1);
 
-    // Los botones eliminar deben conservar .eliminar-button y tener estado deshabilitado
-    const delButtons = document.querySelectorAll(".eliminar-button");
+    const delButtons = document.querySelectorAll("#listaAmigos li button");
     expect(delButtons.length).toBe(2);
+
     delButtons.forEach((b) => {
       expect(b.disabled).toBe(true);
-      // Según tu cambio, ahora agregas la clase en vez de reemplazarla
       expect(b.classList.contains("button-disabled-ul")).toBe(true);
     });
   });
