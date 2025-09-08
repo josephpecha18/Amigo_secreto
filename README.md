@@ -8,6 +8,10 @@ Built with **HTML, CSS, and JavaScript**, this project brings a playful yet poli
 [![Open in GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://josephpecha18.github.io/Amigo_secreto/)
 
 ---
+## 🎬 Preview
+![Demo](assets/preview.gif)
+
+---
 
 ## ✨ Features
 
