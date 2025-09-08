@@ -67,6 +67,9 @@ function reiniciarAmigos() {
     document.getElementById('button-sort')
     document.getElementById('button-sort').disabled = true;
     document.getElementById('button-sort').className = "button-draw";
+    document.getElementById('button-add-id')
+    document.getElementById('button-add-id').disabled = false;
+    document.getElementById('button-add-id').className = "button-add";
 }
 
 function sortearAmigo () {
