@@ -1,15 +1,16 @@
 # 🎁 Secret Friend (Amigo Secreto)
+<p><small>
+A lightweight and interactive web app to organize your very own <strong>Secret Friend</strong> draw.
+Built with <strong>HTML, CSS, and JavaScript</strong>, this project brings a playful yet polished way to add, manage, and randomly pick friends for your gift exchange.
+</small></p>
 
-A lightweight and interactive web app to organize your very own **Secret Friend** draw.  
-Built with **HTML, CSS, and JavaScript**, this project brings a playful yet polished way to add, manage, and randomly pick friends for your gift exchange.  
 ---
-
 ## 🚀 Live Demo
 [![Open in GitHub Pages](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue)](https://josephpecha18.github.io/Amigo_secreto/)
 
 ---
 ## 🎬 Preview
-![Demo](challenge-amigo-secreto_esp-main/challenge-amigo-secreto_esp-main/assets/AnimationWebSite.gif)
+![Demo](./assets/AnimationWebSite.gif)
 
 ---
 
